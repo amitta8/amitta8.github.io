@@ -5,7 +5,7 @@
   var margin = {top: 20, right: 30, bottom: 40, left: 180},
   width = 800 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
-d3.select("body").append('p').text('Now that we have seen the cases in the United States and seen which type of cancers are most common, this graph shows the top 10 cancer types in terms of death counts on the y axis by the number of deaths in the United States on the x axis in a horizontal bar graph. The top number of deaths are for Lung and Bronchus cancer and Colon and Rectum cancer which are highlighted in the bright colors.');
+d3.select("body").append('p').text('Now that we have seen the cases by state and population in the United States and seen which type of cancers are most common within the US, this graph shows the top 10 cancer types in terms of death counts on the y axis by the number of deaths in the United States on the x axis in a horizontal bar graph, with a label on the y axis. The top number of deaths are for Lung and Bronchus cancer and Colon and Rectum cancer which are highlighted in the bright colors.');
 
 var svg = d3.select("#my_dataviz2")
   .append("svg")
@@ -37,7 +37,7 @@ d3.csv("death_rates.csv", function(data) {
       .text("axis")
   
   var myColor = d3.scaleSequential()
-      .interpolator(d3.interpolateInferno)
+      .interpolator(d3.interpolateViridis)
       .domain([10994, 145849])
 
 
@@ -57,7 +57,7 @@ d3.csv("death_rates.csv", function(data) {
       .style("opacity", 1)
     d3.select(this)
       .style("stroke", "black")
-      .style("opacity", 1)
+      .style("opacity", 0.5)
     }
     var mousemove = function(d) {
     Tooltip

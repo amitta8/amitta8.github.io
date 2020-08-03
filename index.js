@@ -34,7 +34,7 @@ d3.csv("types.csv", function(data) {
     .call(d3.axisLeft(y))
 
   var myColor = d3.scaleSequential()
-    .interpolator(d3.interpolateInferno)
+    .interpolator(d3.interpolateViridis)
     .domain([49881, 250520])
 
 
@@ -54,7 +54,7 @@ d3.csv("types.csv", function(data) {
     .style("opacity", 1)
   d3.select(this)
     .style("stroke", "black")
-    .style("opacity", 1)
+    .style("opacity", 0.5)
   }
   var mousemove = function(d) {
   Tooltip
